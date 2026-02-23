@@ -1,4 +1,4 @@
-package models;
+package com.utad.examen_fernandez_lourdes_2.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
