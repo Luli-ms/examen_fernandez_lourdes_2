@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,8 +26,8 @@ class ProductController {
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         Optional<Product> found = service.findProductById(id);
-        return found.map(videojuego ->
-                ResponseEntity.ok().body(videojuego)
+        return found.map(product ->
+                ResponseEntity.ok().body(product)
         ).orElseGet(() ->
                 ResponseEntity.notFound().build()
         );
